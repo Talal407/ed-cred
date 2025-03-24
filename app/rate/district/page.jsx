@@ -5,7 +5,7 @@ import Footer from '@/components/common/Footer';
 import Navbar from '@/components/Landing/Navbar';
 import React from 'react';
 
-const DirectorPage = () => {
+const DistrictPage = () => {
     return (
         <div className='w-full overflow-x-hidden'>
             <Navbar />
@@ -20,4 +20,4 @@ const DirectorPage = () => {
     )
 }
 
-export default DirectorPage;
+export default DistrictPage;

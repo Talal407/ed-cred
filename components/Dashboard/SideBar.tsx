@@ -1,3 +1,4 @@
+'use client'
 import {
     HouseIcon,
     Grid2x2Icon,

@@ -2,7 +2,6 @@
 import { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link';
-import Button from '@/components/ui/Button';
 import { MenuIcon, XIcon } from 'lucide-react';
 import Signup from '../Signup';
 import Signin from '../Signin';

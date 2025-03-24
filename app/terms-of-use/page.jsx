@@ -7,6 +7,7 @@ import Navbar from '@/components/Landing/Navbar';
 const TermsOfUsePage = () => {
     return (
         <>
+        <div className='w-full overflow-x-hidden'>
             <Navbar />
             <Header
                 title='Terms Of Use'
@@ -14,6 +15,7 @@ const TermsOfUsePage = () => {
             />
             <TermsOFUse/>
             <Footer/>
+            </div>
         </>
     )
 }

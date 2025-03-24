@@ -1,6 +1,6 @@
 "use client";
 import { useState } from 'react'
-import Button from './ui/Button';
+import { Button } from './ui/button';
 import { CircleXIcon } from 'lucide-react';
 import { signup } from '@/api/auth';
 

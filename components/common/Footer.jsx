@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import React from 'react'
-import Button from '@/components/ui/Button'
+import { Button } from '../ui/button'
 import { ArrowRightIcon, FacebookIcon, LinkedinIcon, TwitterIcon } from 'lucide-react'
 
 const Footer = () => {

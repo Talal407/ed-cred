@@ -5,10 +5,7 @@ import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
 import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from "@/components/ui/select";
-import { Switch } from "@/components/ui/switch";
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Button } from "@/components/ui/button";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 
@@ -28,8 +25,8 @@ const formSchema = z.object({
     }),
 });
 
-const FeedbackForm = () => {
-    const form = useForm<z.infer<typeof formSchema>>({
+const Feedbacklist = () => {
+    const form = useForm({
         resolver: zodResolver(formSchema),
         defaultValues: {
             title: "",
@@ -46,11 +43,12 @@ const FeedbackForm = () => {
         },
     });
 
-    const onSubmit = (data: z.infer<typeof formSchema>) => {
+    const onSubmit = (data) => {
         console.log("Form Data:", data);
     };
 
     return (
+
         <Card className="w-full flex-grow h-auto shadow-lg rounded-lg">
             <CardContent className="p-10">
                 <Form {...form}>
@@ -61,7 +59,8 @@ const FeedbackForm = () => {
                             name="title"
                             render={({ field }) => (
                                 <FormItem>
-                                    <FormLabel>Feedback Title</FormLabel>
+                                    <p className="text-2xl -my-10 mb-5 font-bold ">Filter</p>
+                                    <FormLabel>Title</FormLabel>
                                     <FormControl>
                                         <Input placeholder="Enter feedback title" {...field} />
                                     </FormControl>
@@ -70,7 +69,8 @@ const FeedbackForm = () => {
                             )}
                         />
 
-                        {/* Category Dropdown */}
+
+                        {/* Category & Subcategory Dropdowns */}
                         <div className="flex items-center justify-between w-full gap-10">
                             <FormField
                                 control={form.control}
@@ -78,13 +78,13 @@ const FeedbackForm = () => {
                                 render={({ field }) => (
                                     <FormItem className="w-full">
                                         <FormLabel>Category</FormLabel>
-                                        <Select onValueChange={field.onChange} defaultValue={field.value}>
+                                        <Select onValueChange={field.onChange} value={field.value}>
                                             <FormControl>
                                                 <SelectTrigger className="w-full">
                                                     <SelectValue placeholder="Select a category" />
                                                 </SelectTrigger>
                                             </FormControl>
-                                            <SelectContent className="">
+                                            <SelectContent>
                                                 <SelectItem value="education">Education</SelectItem>
                                                 <SelectItem value="health">Health</SelectItem>
                                                 <SelectItem value="technology">Technology</SelectItem>
@@ -95,14 +95,13 @@ const FeedbackForm = () => {
                                 )}
                             />
 
-                            {/* Subcategory Dropdown */}
                             <FormField
                                 control={form.control}
                                 name="subcategory"
                                 render={({ field }) => (
                                     <FormItem className="w-full">
                                         <FormLabel>Subcategory</FormLabel>
-                                        <Select onValueChange={field.onChange} defaultValue={field.value}>
+                                        <Select onValueChange={field.onChange} value={field.value}>
                                             <FormControl>
                                                 <SelectTrigger className="w-full">
                                                     <SelectValue placeholder="Select a subcategory" />
@@ -120,70 +119,8 @@ const FeedbackForm = () => {
                             />
                         </div>
 
-                        {/* Feedback Details (Switches)
-                        <FormLabel>Feedback Details</FormLabel>
-                        <div className="flex gap-10">
-                            {["name", "country", "dates", "salary", "web"].map((detail) => (
-                                <FormField
-                                    key={detail}
-                                    control={form.control}
-                                    name={`details.${detail}` as any}
-                                    render={({ field }) => (
-                                        <FormItem className="flex items-center justify-between">
-                                            <Label className="capitalize">{detail}</Label>
-                                            <FormControl>
-                                                <Switch checked={field.value} onCheckedChange={field.onChange} />
-                                            </FormControl>
-                                        </FormItem>
-                                    )}
-                                />
-                            ))}
-                        </div> */}
-
-                        {/* Question Type (Radio Group) */}
-                        <div className="bg-gray-500/10 p-10 rounded-xl ">
-                            <FormField
-                                control={form.control}
-                                name="questionType"
-                                render={({ field }) => (
-                                    <FormItem>
-                                        <FormLabel>Question Type</FormLabel>
-                                        <FormControl>
-                                            <RadioGroup
-                                                value={field.value}
-                                                onValueChange={field.onChange}
-                                                className="space-y-2"
-                                            >
-                                                <div className="flex items-center gap-2">
-                                                    <RadioGroupItem value="rating" id="rating" />
-                                                    <Label htmlFor="rating">Rating</Label>
-                                                </div>
-                                                <div className="flex items-center gap-2">
-                                                    <RadioGroupItem value="multiple_choice" id="multiple_choice" />
-                                                    <Label htmlFor="multiple_choice">Multiple Choice</Label>
-                                                </div>
-                                                <div className="flex items-center gap-2">
-                                                    <RadioGroupItem value="true_false" id="true_false" />
-                                                    <Label htmlFor="true_false">True/False</Label>
-                                                </div>
-                                                <div className="flex items-center gap-2">
-                                                    <RadioGroupItem value="open_ended" id="open_ended" />
-                                                    <Label htmlFor="open_ended">Open-Ended</Label>
-                                                </div>
-                                            </RadioGroup>
-                                        </FormControl>
-                                        <FormMessage />
-                                    </FormItem>
-                                )}
-                            />
-                        </div>
-
                         {/* Submit Button */}
-                        <div>
-                            <Button type="submit" className="">
-                                Submit Feedback
-                            </Button>
-                        </div>
+                        <Button type="submit">Submit Feedback</Button>
                     </form>
                 </Form>
             </CardContent>
@@ -191,4 +128,4 @@ const FeedbackForm = () => {
     );
 };
 
-export default FeedbackForm;
+export default Feedbacklist;

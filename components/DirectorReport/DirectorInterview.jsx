@@ -1,14 +1,14 @@
 const DirectorInterview = () => {
     return (
-        <div className="w-5xl bg-white p-4 ">
+        <div className="lg:w-5xl w-s bg-white p-4 ">
             <div className="flex flex-col items-center">
-                <p className=" text-m  text-[#2D2D2D] mb-2">
+                <p className=" lg:text-base text-sm  text-[#2D2D2D] mb-2">
                     Please add your comments below
                 </p>
                 <p className="text-m  text-[#2D2D2D] mb-2">
                     Reviews with comments take posting priority
                 </p>
-                <p className="text-sm mb-3 text-[#439E5E]">
+                <p className="text-sm lg:mb-3 text-[#439E5E]">
                     Note: Please avoid submitting AI generated reviews. The human experience is what ISR is all about.
                 </p>
             </div>
@@ -32,7 +32,7 @@ const DirectorInterview = () => {
                 <p className="font-bold text-sm  text-[#676767]">
                     After the interview
                 </p>
-                <p className="text-sm w-screen text-[#676767]">
+                <p className="text-sm lg:w-auto text-[#676767]">
                     Were you left dangling, waiting for a decision while other candidates were interviewed? Were you offered a school handbook to review before signing a contract?
                 </p>
                 <p className="text-sm text-[#676767]">
@@ -64,7 +64,7 @@ const DirectorInterview = () => {
                 you confirm that you AGREE to abide by our Terms of Use. (Your Review will remain intact if you wish to reread the Terms of Use.)
             </p>
 
-            <button className=" w-auto h-auto bg-[#439E5E] text-white px-10 py-1 mx-70 mt-4 rounded-sm hover:bg-green-600 transition duration-200">
+            <button className=" w-auto h-auto bg-[#439E5E] text-white lg:px-10 lg:py-1 py-3 lg:mx-70 mt-4 rounded-sm hover:bg-green-600 transition duration-200">
                 CLICK TO SUBMIT YOUR SCHOOL FEEDBACK
             </button>
         </div>

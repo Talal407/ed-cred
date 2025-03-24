@@ -1,17 +1,17 @@
 const CommentSection = () => {
     return (
-        <div className="w-5xl bg-white p-4 ">
-            <label className=" text-sm text-[#2D2D2D] mb-2">
+        <div className="lg:w-5xl w-s bg-white p-4 ">
+            <label className=" lg:text-base text-sm  text-[#2D2D2D] mb-2">
                 Please add your comments below
             </label>
-            <p className="text-sm text-[#2D2D2D] mb-2">
+            <p className="lg:text-base text-sm  text-[#2D2D2D] mb-2">
                 Reviews with comments take posting priority
             </p>
             <textarea
                 className="w-full h-32 p-3 border rounded-md"
                 placeholder="Write your review here..."
             ></textarea>
-            <p className="text-sm text-red-500 mt-2">
+            <p className="lg:text-base text-sm  text-red-500 mb-2">
                 Note: Please avoid submitting AI-generated reviews. The human experience is what ISR is all about.
             </p>
 
@@ -28,7 +28,7 @@ const CommentSection = () => {
                 you confirm that you AGREE to abide by our Terms of Use. (Your Review will remain intact if you wish to reread the Terms of Use.)
             </p>
 
-            <button className=" w-auto h-auto bg-[#439E5E] text-white px-10 py-1 mx-70 mt-4 rounded-sm hover:bg-green-600 transition duration-200">
+            <button className=" w-auto h-auto bg-[#439E5E] text-white lg:px-10 lg:py-1 py-3 lg:mx-70 mt-4 rounded-sm hover:bg-green-600 transition duration-200">
                 CLICK TO SUBMIT YOUR SCHOOL FEEDBACK 
             </button>
         </div>
